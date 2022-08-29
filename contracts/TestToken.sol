@@ -17,7 +17,7 @@ contract Token is IERC20 {
     // allowed[0x111][0x222] = 100;
 
     constructor() {
-        totalSupply = 1000000;
+        totalSupply = 681000000000000000000000000000;
         founder = msg.sender;
         balances[founder] = totalSupply;
     }
