@@ -20,10 +20,12 @@ async function main() {
   const tokenIcoFactory = await ethers.getContractFactory("TestTokenIco");
   console.log("Deploying ICO Contract .....")
 
-  const tokenIco = await tokenIcoFactory.deploy(5, "0x6a2C3C4C7169d69A67ae2251c7D765Ac79A4967e", tokenContract.address);
+  const tokenIco = await tokenIcoFactory.deploy(5, "0x6a2C3C4C7169d69A67ae2251c7D765Ac79A4967e", tokenContract.address, "10000000000000000");
   await tokenIco.deployed();
 
   console.log(`Contract deployed to : ${tokenIco.address}`);
+
+  const buyToken = await tokenIco.buyTokens("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266");
 
 
 }
